@@ -26,7 +26,7 @@ export class CustomOrderRepository implements OrderRepositoryDTO {
     return this.repository.save(this.repository.create(data));
   }
 
-  public update(id: string, data: SaveOrder): Promise<UpdateResult> {
+  public update(id: string, data: Partial<SaveOrder>): Promise<UpdateResult> {
     return this.repository.update({ id }, data);
   }
 }

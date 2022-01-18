@@ -13,5 +13,6 @@ export const connectionOptions: ConnectionOptions = {
   username: 'root',
   password: 'root',
   logging: ['error', 'warn'],
+  synchronize: true,
   entities: [PATH_ENTITIES]
 };

@@ -31,7 +31,7 @@ export class OrderService implements OrderServiceDTO {
 
     return order;
   }
-  public async update(id: string, data: SaveOrder): Promise<void> {
+  public async update(id: string, data: Partial<SaveOrder>): Promise<void> {
     const order = await this.repository.findById(id);
 
     if (!order) throw new NotFoundException('Order is not found');

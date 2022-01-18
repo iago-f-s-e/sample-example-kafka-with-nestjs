@@ -1,21 +1,55 @@
 {
   "compilerOptions": {
+    "lib": ["ES2020"],
+    "target": "ES2020",
     "module": "commonjs",
-    "declaration": true,
+    "moduleResolution": "node",   
+    "outDir": "dist",
+    "rootDirs": ["./src", "./test"],
+    "baseUrl": ".",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ], 
+
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true, 
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "removeComments": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2017",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
+
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@test/*": ["./test/*"],
+      "@auth/*": ["./src/modules/auth/*"],
+      "@domain_admin/*": ["src/modules/domain/admin/*"],
+      "@server/*": ["./src/server/*"],
+      "@fixtures/*": ["./test/fixtures/*"]
+    }
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./test/**/*.ts",
+    "ormconfig.ts"
+  ],
+  "exclude": [
+    "./node_modules/*",
+    "dist"
+  ]
 }
+
